@@ -32,7 +32,9 @@ struct ContentViewUseCase: ContentViewUseCaseType {
     func changeVisible(data: [Pokemon], previousCard: Int, currentCard: Int) -> [Pokemon] {
         data.map {
             var pokemon = $0
-            pokemon.isVisible = pokemon.isVisible != true ? false : $0.id != previousCard && $0.id != currentCard
+            pokemon.isVisible = pokemon.isVisible != true ?
+                false :
+                $0.id != previousCard && $0.id != currentCard
             return pokemon
         }
     }

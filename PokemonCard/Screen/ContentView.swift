@@ -25,6 +25,28 @@ struct ContentView: View {
     @State var point = 0
     @State var showAlert = false
     
+    func eventFlipCard(item: Pokemon) {
+        if previousCard.id == 0 {
+            previousCard = item
+        } else if currentCard.id == 0 {
+            currentCard = item
+        } else if previousCard.id == currentCard.id {
+            previousCard.id = 0
+            currentCard.id = 0
+        }
+        else {
+            if previousCard.image == currentCard.image {
+                point += 1
+                pokemons = usecase.changeVisible(data: pokemons,
+                                                 previousCard: previousCard.id,
+                                                 currentCard: currentCard.id)
+            }
+            
+            previousCard.id = 0
+            currentCard.id = 0
+        }
+    }
+    
     var body: some View {
         // MARK: Top View Pokemon Card.
         VStack {
@@ -51,8 +73,9 @@ struct ContentView: View {
                     
                     Text("Let's go catch pokemon")
                         .font(.caption)
-                        .foregroundColor(.white.opacity(0.8))
+                        .foregroundColor(Color.white.opacity(0.8))
                 }
+                
                 Spacer()
             }
             .padding()
@@ -62,6 +85,7 @@ struct ContentView: View {
             .padding()
             .padding(.top, ConstantContentView.spacingView + 10)
             .shadow(radius: ConstantContentView.shadowRadius)
+
             
             LazyVGrid(columns: ConstantContentView.columns,
                       alignment: .center,
@@ -70,25 +94,7 @@ struct ContentView: View {
                     PokemonCard(pokemon: item, flip: (item.id == previousCard.id || item.id == currentCard.id))
                         .onTapGesture {
                             withAnimation(.easeIn(duration: 0.5)) {
-                                if previousCard.id == 0 {
-                                    previousCard = item
-                                } else if currentCard.id == 0 {
-                                    currentCard = item
-                                } else if previousCard.id == currentCard.id {
-                                    previousCard.id = 0
-                                    currentCard.id = 0
-                                }
-                                else {
-                                    if previousCard.image == currentCard.image {
-                                        point += 1
-                                        pokemons = usecase.changeVisible(data: pokemons,
-                                                                         previousCard: previousCard.id,
-                                                                         currentCard: currentCard.id)
-                                    }
-                                    
-                                    previousCard.id = 0
-                                    currentCard.id = 0
-                                }
+                                eventFlipCard(item: item)
                             }
                         }
                         .rotation3DEffect(.init(degrees: (item.id == previousCard.id || item.id == currentCard.id) ? 180 : 0),

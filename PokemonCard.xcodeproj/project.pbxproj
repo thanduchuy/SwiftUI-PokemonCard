@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13AFE890263BBD0A00BA30DD /* shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AFE88F263BBD0A00BA30DD /* shape.swift */; };
 		348D13A0263A5B54005517BC /* BorderRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D139F263A5B54005517BC /* BorderRadius.swift */; };
 		348D13A5263A5E03005517BC /* PokemonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D13A4263A5E03005517BC /* PokemonCard.swift */; };
 		34B55D7E263A3EE000FACE43 /* PokemonCardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B55D7D263A3EE000FACE43 /* PokemonCardApp.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13AFE88F263BBD0A00BA30DD /* shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shape.swift; sourceTree = "<group>"; };
 		348D139F263A5B54005517BC /* BorderRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderRadius.swift; sourceTree = "<group>"; };
 		348D13A4263A5E03005517BC /* PokemonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCard.swift; sourceTree = "<group>"; };
 		34B55D7A263A3EE000FACE43 /* PokemonCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 		34B55DAB263A49A800FACE43 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				13AFE88F263BBD0A00BA30DD /* shape.swift */,
 				348D13A3263A5DF5005517BC /* Cell */,
 				34B55D7F263A3EE000FACE43 /* ContentView.swift */,
 				34B55DAE263A4A5B00FACE43 /* ContentViewUseCase.swift */,
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34B55DAF263A4A5B00FACE43 /* ContentViewUseCase.swift in Sources */,
+				13AFE890263BBD0A00BA30DD /* shape.swift in Sources */,
 				34B55DAA263A493B00FACE43 /* Pokemon.swift in Sources */,
 				34B55D80263A3EE000FACE43 /* ContentView.swift in Sources */,
 				348D13A5263A5E03005517BC /* PokemonCard.swift in Sources */,
@@ -395,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -450,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
